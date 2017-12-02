@@ -3,12 +3,12 @@ var t = " ";
 var p;
 
 function setup(){
-  pic = select('.wrapper');
+  pic = select('#wrapper');
   p = createP('No website yet');
 }
 
 function draw(){
-  //ajaxFunction();
+  ajaxFunction();
 }
 
 function ajaxFunction(){
@@ -35,8 +35,9 @@ function ajaxFunction(){
 	ajaxRequest.onreadystatechange = function(){
 		if(ajaxRequest.readyState == 4){
 			t = ajaxRequest.responseText;
-      if(t != 0){
-        p.hide();
+      print(t);
+	if(t != 0){
+        pic.hide();
       }
       p.html(t);
 		}
